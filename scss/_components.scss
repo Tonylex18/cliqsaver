@@ -21,6 +21,7 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
     /* 1rem = 10px  10px/16px = 62.5% */
+    overflow-x: hidden;
 }
 
 body {
@@ -43,7 +44,7 @@ a {
     .col-md-6 {
         transition: all 0.5s ease;
         &:hover {
-            transform: translateY(-5%);
+            transform: translateY(-3%);
             @media (max-width: 768px) {
                 transform: translateY(0);
             }

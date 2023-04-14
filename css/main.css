@@ -23,6 +23,7 @@ html {
           box-sizing: border-box;
   font-size: 62.5%;
   /* 1rem = 10px  10px/16px = 62.5% */
+  overflow-x: hidden;
 }
 
 body {
@@ -46,8 +47,8 @@ a {
 }
 
 .guidelines-cards .col-md-6:hover {
-  -webkit-transform: translateY(-5%);
-          transform: translateY(-5%);
+  -webkit-transform: translateY(-3%);
+          transform: translateY(-3%);
 }
 
 @media (max-width: 768px) {
@@ -867,7 +868,7 @@ a {
 
 .download-container__button img {
   width: 200.64px;
-  height: 72px;
+  height: 45px;
   border: none;
   outline: none;
   -o-object-fit: fill;
@@ -926,6 +927,7 @@ a {
 }
 
 .guildline-hero__section .image-content {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1061,11 +1063,6 @@ a {
   transition: 0.5s ease;
 }
 
-.guidelines-cards .card:hover {
-  -webkit-transform: translateY(-5%);
-          transform: translateY(-5%);
-}
-
 @media (max-width: 768px) {
   .guidelines-cards .card:hover {
     -webkit-transform: translateY(0);
@@ -1141,6 +1138,15 @@ a {
   height: 30px;
   -o-object-fit: fill;
      object-fit: fill;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .row .media-links a .ig-logo {
+  width: 100%;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .footer .row .media-links > :first-child {
