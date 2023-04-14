@@ -8,7 +8,6 @@ window.addEventListener("scroll", function () {
 });
 
 //Add active class to the current button (highlight it)
-
 const navbar = document.querySelectorAll(".nav-link");
 
 navbar.forEach((navbar) => {

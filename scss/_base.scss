@@ -1,6 +1,7 @@
 // navbar
 .navbar {
     background: var(--bg-color);
+    overflow-x: hidden;
     &-brand {
         img {
             width: 125px;
@@ -42,6 +43,7 @@
 // hero section
 .hero__section {
     background: var(--bg-color);
+    overflow-x: hidden;
     .section-box1 {
         position: absolute;
         width: 100.47px;
@@ -205,6 +207,7 @@
 
 .finance {
     height: 60vh;
+    overflow-x: hidden;
     @media (max-width: 720px) {
         & {
             height: 40vh;
@@ -459,6 +462,9 @@
                 line-height: 120.5%;
                 letter-spacing: -0.015em;
                 color: rgba(0, 0, 0, 0.5);
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
                 img {
                     background: var(--text-success);
                     padding: 2rem;
@@ -854,9 +860,8 @@
                 margin: 0;
             }
             .ig-logo {
-                width: 100%;
+                width: 30px;
                 height: 30px;
-                object-fit: cover;
             }
         }
         .media-links> :first-child {

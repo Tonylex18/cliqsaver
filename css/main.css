@@ -14,8 +14,8 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -23,7 +23,6 @@ html {
           box-sizing: border-box;
   font-size: 62.5%;
   /* 1rem = 10px  10px/16px = 62.5% */
-  overflow-x: hidden;
 }
 
 body {
@@ -60,6 +59,7 @@ a {
 
 .navbar {
   background: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .navbar-brand img {
@@ -104,6 +104,7 @@ a {
 
 .hero__section {
   background: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .hero__section .section-box1 {
@@ -300,6 +301,7 @@ a {
 
 .finance {
   height: 60vh;
+  overflow-x: hidden;
 }
 
 @media (max-width: 720px) {
@@ -620,6 +622,12 @@ a {
   line-height: 120.5%;
   letter-spacing: -0.015em;
   color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .testmonies__buttom-container .slide-text__description {
+    font-size: 16px;
+  }
 }
 
 .testmonies__buttom-container .slide-text__description img {
@@ -1143,10 +1151,8 @@ a {
 }
 
 .footer .row .media-links a .ig-logo {
-  width: 100%;
+  width: 30px;
   height: 30px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .footer .row .media-links > :first-child {
