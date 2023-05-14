@@ -17,8 +17,6 @@ navbar.forEach((navbar) => {
   });
 });
 
-AOS.init();
-
 // // change of image and text in the slide section
 var slides = document.querySelectorAll(".slide");
 var currentSlide = 0;
@@ -33,9 +31,16 @@ function prevSlide() {
 }
 
 function goToSlide(n) {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (n + slides.length) % slides.length;
-  slides[currentSlide].classList.add("active");
+  if (
+    slides &&
+    slides.length > 0 &&
+    currentSlide >= 0 &&
+    currentSlide < slides.length
+  ) {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
 }
 
 function pauseSlideshow() {
@@ -46,16 +51,50 @@ function playSlideshow() {
   slideInterval = setInterval(nextSlide, 5000);
 }
 
-document.querySelector(".prev").addEventListener("click", function () {
-  pauseSlideshow();
-  prevSlide();
-  playSlideshow();
+let prevButton = document.querySelector(".prev");
+
+if (prevButton) {
+  prevButton.addEventListener("click", function () {
+    pauseSlideshow();
+    prevSlide();
+    playSlideshow();
+  });
+}
+
+let nextButton = document.querySelector(".next");
+if (nextButton) {
+  nextButton.addEventListener("click", function () {
+    pauseSlideshow();
+    nextSlide();
+    playSlideshow();
+  });
+}
+
+if (
+  slides &&
+  slides.length > 0 &&
+  currentSlide >= 0 &&
+  currentSlide < slides.length
+) {
+  slides[currentSlide].classList.add("active");
+}
+
+const accordionButtons = document.querySelectorAll("#accordion-button");
+const accordionItem = document.querySelectorAll(".accordion-item");
+
+accordionButtons.forEach((accordionButton, index) => {
+  accordionButton.addEventListener("click", () => {
+    accordionItem.forEach((item) => {
+      item.classList.remove("expand");
+    });
+    if (!accordionButton.classList.contains("active")) {
+      accordionButton.classList.add("active");
+      accordionItem[index].classList.add("expand");
+    } else {
+      accordionButton.classList.remove("active");
+      accordionItem[index].classList.remove("expand");
+    }
+  });
 });
 
-document.querySelector(".next").addEventListener("click", function () {
-  pauseSlideshow();
-  nextSlide();
-  playSlideshow();
-});
-
-slides[currentSlide].classList.add("active");
+AOS.init();
